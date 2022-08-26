@@ -42,10 +42,12 @@ dependencies:
   permission_handler: ^10.0.0
   fluttertoast: ^8.0.9
   get_storage: ^2.0.3
+  build_runner: ^2.1.11
   json_serializable: ^6.3.1
   json_annotation: ^4.6.0
   date_format: ^2.0.6
   loading_animation_widget: ^1.2.0+2
+  url_launcher: ^6.1.5
 
 dev_dependencies:
   flutter_test:

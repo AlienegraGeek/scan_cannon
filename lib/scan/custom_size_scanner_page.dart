@@ -5,6 +5,8 @@ import 'app_barcode_scanner_widget.dart';
 ///
 /// CustomSizeScannerPage
 class CustomSizeScannerPage extends StatefulWidget {
+  const CustomSizeScannerPage({Key? key}) : super(key: key);
+
   @override
   _CustomSizeScannerPageState createState() => _CustomSizeScannerPageState();
 }
@@ -16,7 +18,7 @@ class _CustomSizeScannerPageState extends State<CustomSizeScannerPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(_code),
+        title: Text('扫描条形码'),
       ),
       body: Column(
         children: [
