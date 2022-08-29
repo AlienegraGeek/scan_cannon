@@ -19,18 +19,22 @@ class CustomScanPage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          ElevatedButton(
-            onPressed: () {
-              logic.httpGetScanGood('6928804010114');
-            },
-            child: Text('点我测试'),
-          ),
+          // ElevatedButton(
+          //   onPressed: () {
+          //     logic.httpGetScanGood('6928804010114');
+          //   },
+          //   child: Text('点我测试'),
+          // ),
           Expanded(
             flex: 4,
             child: AppBarcodeScannerWidget.defaultStyle(
               resultCallback: (String code) async {
-                await logic.httpGetScanGood(code);
-                ZeeDialog().show('商品信息', '是的', '好的', 2, content(logic.goodData.value));
+                if(code.length == 13){
+                  await logic.httpGetScanGood(code);
+                  ZeeDialog().show('条形码', '是的', '好的', 2, content(logic.goodData.value));
+                }else{
+                  ZeeDialog().show('二维码', '是的', '好的', 2, Text(code));
+                }
                 // setState(() {
                 //   _code = code;
                 // });
