@@ -1,7 +1,13 @@
 import 'package:ai_barcode/ai_barcode.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:scan_cannon/scan/spec/scan_spec.dart';
+
+import '../common/zee_dIalog.dart';
+import 'custom_scan/custom_scan_logic.dart';
 
 late String _label;
 late Function(String result) _resultCallback;
@@ -44,8 +50,7 @@ class _AppBarcodeState extends State<AppBarcodeScannerWidget> {
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       TargetPlatform platform = Theme.of(context).platform;
       if (!kIsWeb) {
-        if (platform == TargetPlatform.android ||
-            platform == TargetPlatform.iOS) {
+        if (platform == TargetPlatform.android || platform == TargetPlatform.iOS) {
           _requestMobilePermission();
         } else {
           setState(() {
@@ -147,6 +152,7 @@ class _BarcodeInputWidget extends StatefulWidget {
 
 class _BarcodeInputState extends State<_BarcodeInputWidget> {
   final _controller = TextEditingController();
+  final logic = Get.put(CustomScanLogic());
 
   @override
   void initState() {
@@ -155,8 +161,7 @@ class _BarcodeInputState extends State<_BarcodeInputWidget> {
       final text = _controller.text.toLowerCase();
       _controller.value = _controller.value.copyWith(
         text: text,
-        selection:
-            TextSelection(baseOffset: text.length, extentOffset: text.length),
+        selection: TextSelection(baseOffset: text.length, extentOffset: text.length),
         composing: TextRange.empty,
       );
     });
@@ -177,6 +182,10 @@ class _BarcodeInputState extends State<_BarcodeInputWidget> {
               child: TextFormField(
                 controller: _controller,
                 onChanged: widget._changed,
+                onEditingComplete: () async {
+                  await logic.httpGetScanGood(_controller.text);
+                  ZeeDialog().show('条形码', '是的', '好的', 2, content(logic.goodData.value));
+                },
                 decoration: InputDecoration(border: OutlineInputBorder()),
               ),
             ),
@@ -184,6 +193,19 @@ class _BarcodeInputState extends State<_BarcodeInputWidget> {
           ],
         ),
         Padding(padding: EdgeInsets.all(8)),
+      ],
+    );
+  }
+
+  Widget content(GoodItem good) {
+    return Column(
+      children: [
+        Text(good.goodsName!, style: TextStyle(color: Colors.white)),
+        Text(good.price!, style: TextStyle(color: Colors.white)),
+        Text(good.barcode, style: TextStyle(color: Colors.white)),
+        Text(good.brand!, style: TextStyle(color: Colors.white)),
+        Text(good.standard!, style: TextStyle(color: Colors.white)),
+        Text(good.supplier!, style: TextStyle(color: Colors.white)),
       ],
     );
   }
