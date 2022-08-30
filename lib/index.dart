@@ -51,6 +51,23 @@ class IndexPage extends StatelessWidget {
                 ],
               ),
             ),
+            Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  MaterialButton(
+                    onPressed: () {
+                      Get.toNamed(
+                        "/UsbSerialPage",
+                      );
+                    },
+                    textColor: Colors.white,
+                    color: Colors.blue,
+                    child: Text("USB Test"),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
