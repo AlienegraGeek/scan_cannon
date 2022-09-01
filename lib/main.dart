@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:scan_cannon/scan/custom_scan/custom_scan_view.dart';
 import 'package:scan_cannon/scan/select_scanner_style_page.dart';
 import 'package:scan_cannon/scan/task_next_page.dart';
+import 'package:scan_cannon/usb/usb_quick.dart';
 import 'package:scan_cannon/usb/usb_serial_view.dart';
 
 import 'scan/creator_page.dart';
@@ -36,6 +37,7 @@ Future<void> main() async {
       GetPage(name: '/TaskNextPage', page: () => TaskNextPage()),
       GetPage(name: '/CreatorPage', page: () => CreatorPage()),
       GetPage(name: '/UsbSerialPage', page: () => UsbSerialView()),
+      GetPage(name: '/UsbQuickPage', page: () => UsbQuick()),
     ],
   ));
 }

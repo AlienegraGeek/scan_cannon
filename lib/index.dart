@@ -58,12 +58,12 @@ class IndexPage extends StatelessWidget {
                   MaterialButton(
                     onPressed: () {
                       Get.toNamed(
-                        "/UsbSerialPage",
+                        "/UsbQuickPage",
                       );
                     },
                     textColor: Colors.white,
                     color: Colors.blue,
-                    child: Text("USB Test"),
+                    child: Text("USB Quick Test"),
                   ),
                 ],
               ),
