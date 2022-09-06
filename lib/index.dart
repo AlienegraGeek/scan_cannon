@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class IndexPage extends StatelessWidget {
   IndexPage({Key? key}) : super(key: key);
@@ -9,7 +8,7 @@ class IndexPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("1D barcode/QR code"),
+        title: Text("测试入口"),
       ),
       body: Center(
         child: Column(
@@ -28,7 +27,7 @@ class IndexPage extends StatelessWidget {
                     },
                     textColor: Colors.white,
                     color: Colors.blue,
-                    child: Text("Scan 1D barcode/QR code"),
+                    child: Text("扫码测试"),
                   ),
                 ],
               ),
@@ -63,7 +62,7 @@ class IndexPage extends StatelessWidget {
                     },
                     textColor: Colors.white,
                     color: Colors.blue,
-                    child: Text("USB Quick Test"),
+                    child: Text("USB输入/输出测试"),
                   ),
                 ],
               ),
@@ -80,7 +79,7 @@ class IndexPage extends StatelessWidget {
                     },
                     textColor: Colors.white,
                     color: Colors.blue,
-                    child: Text("Float Window View"),
+                    child: Text("悬浮窗测试"),
                   ),
                 ],
               ),
