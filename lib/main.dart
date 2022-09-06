@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:get/get.dart';
+import 'package:scan_cannon/float/float_window_view.dart';
 import 'package:scan_cannon/scan/custom_scan/custom_scan_view.dart';
 import 'package:scan_cannon/scan/select_scanner_style_page.dart';
 import 'package:scan_cannon/scan/task_next_page.dart';
@@ -39,6 +40,7 @@ Future<void> main() async {
       GetPage(name: '/CreatorPage', page: () => CreatorPage()),
       GetPage(name: '/UsbSerialPage', page: () => UsbSerialView()),
       GetPage(name: '/UsbQuickPage', page: () => UsbQuick()),
+      GetPage(name: '/FloatWindowView', page: () => FloatWindowView()),
     ],
   ));
 }

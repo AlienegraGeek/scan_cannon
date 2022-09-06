@@ -68,6 +68,23 @@ class IndexPage extends StatelessWidget {
                 ],
               ),
             ),
+            Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  MaterialButton(
+                    onPressed: () {
+                      Get.toNamed(
+                        "/FloatWindowView",
+                      );
+                    },
+                    textColor: Colors.white,
+                    color: Colors.blue,
+                    child: Text("Float Window View"),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
