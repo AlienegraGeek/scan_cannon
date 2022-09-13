@@ -1,3 +1,4 @@
+import 'package:android_id/android_id.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -73,6 +74,21 @@ class IndexPage extends StatelessWidget {
                 children: [
                   MaterialButton(
                     onPressed: () {
+                      getId();
+                    },
+                    textColor: Colors.white,
+                    color: Colors.blue,
+                    child: Text("Android Id 测试"),
+                  ),
+                ],
+              ),
+            ),
+            Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  MaterialButton(
+                    onPressed: () {
                       Get.toNamed(
                         "/FloatWindowView",
                       );
@@ -88,5 +104,15 @@ class IndexPage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Future<void> getId() async {
+    const androidIdPlugin = AndroidId();
+    final String? androidId = await androidIdPlugin.getId();
+    print(androidId!);
+    final snackBar = GetSnackBar(
+      messageText: Text(androidId),
+    );
+    Get.showSnackbar(snackBar);
   }
 }
