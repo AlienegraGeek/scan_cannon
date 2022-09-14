@@ -41,12 +41,12 @@ class IndexPage extends StatelessWidget {
                     onPressed: () {
                       //跳转页面=生成二维码
                       Get.toNamed(
-                        "/CreatorPage",
+                        "/BluePlusPage",
                       );
                     },
                     textColor: Colors.white,
                     color: Colors.blue,
-                    child: Text("Create QR code"),
+                    child: Text("蓝牙测试"),
                   ),
                 ],
               ),
