@@ -6,6 +6,7 @@ import 'package:scan_cannon/float/float_window_view.dart';
 import 'package:scan_cannon/scan/custom_scan/custom_scan_view.dart';
 import 'package:scan_cannon/scan/select_scanner_style_page.dart';
 import 'package:scan_cannon/scan/task_next_page.dart';
+import 'package:scan_cannon/talk/talk_agora_view.dart';
 import 'package:scan_cannon/usb/usb_quick.dart';
 import 'package:scan_cannon/usb/usb_serial_view.dart';
 
@@ -44,6 +45,7 @@ Future<void> main() async {
       GetPage(name: '/UsbQuickPage', page: () => UsbQuick()),
       GetPage(name: '/BlueQuickPage', page: () => BlueQuick()),
       GetPage(name: '/BluePlusPage', page: () => BluePlusPage()),
+      GetPage(name: '/TalkAgoraPage', page: () => TalkAgoraPage()),
       GetPage(name: '/FloatWindowView', page: () => FloatWindowView()),
     ],
   ));

@@ -84,9 +84,9 @@ class BluePlusState extends State<BluePlusPage> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Text(model.device.id.toString()),
-                Text("name: " + model.device.name),
-                Text("connectable: " + model.advertisementData.connectable.toString()),
+                Text(model.device.type.toString()),
+                model.device.name != '' ? Text("name: ${model.device.name.toString()}") : Text('未知'),
+                Text("connectable: ${model.advertisementData.connectable}"),
               ],
             ),
             Expanded(
@@ -182,7 +182,7 @@ class BluePlusState extends State<BluePlusPage> {
           AddMsg('${r.device.name} found! rssi: ${r.rssi}');
 
           setState(() {
-            this._blueDevice.add(r);
+            _blueDevice.add(r);
           });
         }
       }
@@ -237,7 +237,7 @@ class BluePlusState extends State<BluePlusPage> {
 
   void AddMsg(String msg) {
     setState(() {
-      this.msgLst.add(msg);
+      msgLst.add(msg);
     });
   }
 

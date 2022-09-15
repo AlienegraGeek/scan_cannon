@@ -1,5 +1,23 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.scan_cannon">
+          xmlns:tools="http://schemas.android.com/tools" package="com.example.scan_cannon">
+<!--    <uses-permission android:name="android.permission.BLUETOOTH" android:maxSdkVersion="30"/>-->
+<!--    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" android:maxSdkVersion="30"/>-->
+<!--    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>-->
+<!--    <uses-permission android:name="android.permission.FINE_LOCATION" />-->
+<!--    <uses-permission android:name="android.permission.BLUETOOTH_SCAN"/>-->
+<!--    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE"/>-->
+<!--    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" tools:ignore="ProtectedPermissions" />
    <application
         android:label="scan_cannon"
         android:name="${applicationName}"
@@ -31,20 +49,4 @@
             android:name="flutterEmbedding"
             android:value="2" />
     </application>
-    <uses-permission android:name="android.permission.BLUETOOTH" />
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-<!--    <uses-permission android:name="android.permission.BLUETOOTH_SCAN"-->
-<!--                     android:usesPermissionFlags="neverForLocation" />-->
-<!--    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE"/>-->
-<!--    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>-->
-<!--    <uses-permission android:name="android.permission.BLUETOOTH"-->
-<!--                     android:maxSdkVersion="30" />-->
-<!--    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"-->
-<!--                     android:maxSdkVersion="30" />-->
-<!--    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"-->
-<!--                     android:maxSdkVersion="30" />-->
-<!--    &lt;!&ndash; legacy for Android 9 or lower &ndash;&gt;-->
-<!--    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"-->
-<!--                     android:maxSdkVersion="28" />-->
 </manifest>
