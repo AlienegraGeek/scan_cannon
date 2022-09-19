@@ -10,8 +10,8 @@ import 'package:permission_handler/permission_handler.dart';
 
 /// 定义 App ID 和 Token
 const appId = "3cef07566b93496798f9de5da63bcc8d";
-const token = "007eJxTYGBzC9smcv9CR4znxQDxi7M2WpRWPy18biTs8tTqplnHjE4FBuPk1DQDc1MzsyRLYxNLM3NLizTLlFTTlEQz46TkZIuUTb4qyYbzVZNr7/IxMTJAIIjPzFCVmsrAAAAa9h+e";
-const channel = "zee";
+const token = "007eJxTYMielSQy9ZhZfjX/b92igrxXJ9fbXOMLn7/JZYpYr+aqEwcUGIyTU9MMzE3NzJIsjU0szcwtLdIsU1JNUxLNjJOSky1SHPU1kg80aCY/NXFhYmSAQBCfhaEktbiEgQEARUggiQ==";
+const channel = "test";
 
 class TalkAgoraPage extends StatefulWidget {
   TalkAgoraPage({Key? key}) : super(key: key);
