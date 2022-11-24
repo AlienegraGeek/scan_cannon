@@ -66,9 +66,7 @@ class _CreatorState extends State<CreatorPage> {
                 ),
               ],
             ),
-            RaisedButton.icon(
-              color: Theme.of(context).primaryColor,
-              textColor: Colors.white,
+            ElevatedButton(
               onPressed: () {
                 setState(() {
                   //update value
@@ -77,8 +75,7 @@ class _CreatorState extends State<CreatorPage> {
                   );
                 });
               },
-              icon: Icon(Icons.create),
-              label: Text("生成二维码"),
+              child: Icon(Icons.create),
             ),
             Column(
               children: <Widget>[
