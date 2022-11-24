@@ -18,7 +18,9 @@ class _UsbQuickState extends State<UsbQuick> {
 
   @override
   Widget build(BuildContext context) {
-    return _buildColumn();
+    return Scaffold(
+      body: _buildColumn(),
+    );
   }
 
   void log(String info) {
@@ -30,13 +32,12 @@ class _UsbQuickState extends State<UsbQuick> {
       children: [
         _init_exit(),
         _getDeviceList(),
-        _getDevicesWithDescription(),
-        _getDeviceDescription(),
-        if (Platform.isLinux) _setAutoDetachKernelDriver(),
-        _has_request(),
-        _open_close(),
-        _get_set_configuration(),
-        _claim_release_interface(),
+        // _getDevicesWithDescription(),
+        // _getDeviceDescription(),
+        // _has_request(),
+        // _open_close(),
+        // _get_set_configuration(),
+        // _claim_release_interface(),
         _bulk_transfer(),
       ],
     );
@@ -175,7 +176,8 @@ class _UsbQuickState extends State<UsbQuick> {
             Row(
               children: [
                 ElevatedButton(
-                  child: const Text('bulkTransferIn'),
+                  // child: const Text('bulkTransferIn'),
+                  child: const Text('输入'),
                   onPressed: () async {
                     var endpoint = _configuration!.interfaces[0].endpoints.firstWhere((e) => e.direction == UsbEndpoint.DIRECTION_IN);
                     var bulkTransferIn = await QuickUsb.bulkTransferIn(endpoint, 1024);
@@ -184,7 +186,8 @@ class _UsbQuickState extends State<UsbQuick> {
                   },
                 ),
                 ElevatedButton(
-                  child: const Text('bulkTransferOut'),
+                  // child: const Text('bulkTransferOut'),
+                  child: const Text('输出'),
                   onPressed: () async {
                     var data = Uint8List.fromList(utf8.encode(''));
                     var endpoint = _configuration!.interfaces[0].endpoints.firstWhere((e) => e.direction == UsbEndpoint.DIRECTION_OUT);
@@ -231,19 +234,6 @@ class _UsbQuickState extends State<UsbQuick> {
       onPressed: () async {
         var description = await QuickUsb.getDeviceDescription(_deviceList!.first);
         log('description ${description.toMap()}');
-      },
-    );
-  }
-
-  bool _autoDetachEnabled = false;
-
-  Widget _setAutoDetachKernelDriver() {
-    return ElevatedButton(
-      child: const Text('setAutoDetachKernelDriver'),
-      onPressed: () async {
-        await QuickUsb.setAutoDetachKernelDriver(!_autoDetachEnabled);
-        _autoDetachEnabled = !_autoDetachEnabled;
-        log('setAutoDetachKernelDriver: $_autoDetachEnabled');
       },
     );
   }
